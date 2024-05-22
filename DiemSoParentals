@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+
+<style>
+    input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+        color: #fff;
+        position: relative;
+    }
+
+    input[type="date"]::-webkit-datetime-edit-year-field {
+        position: absolute !important;
+        color: #000;
+        left: 58px;
+    }
+
+    input[type="date"]::-webkit-datetime-edit-month-field {
+        position: absolute !important;
+        color: #000;
+        left: 30px;
+    }
+
+    input[type="date"]::-webkit-datetime-edit-day-field {
+        position: absolute !important;
+        color: #000;
+        left: 4px;
+    }
+</style>
+<html lang="en" class="notranslate" translate="no">
+<head>
+    <meta charset="utf-8" />
+    
+    <title>ASC School - Cổng Phụ Huynh</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Admin Theme" name="description" />
+    <meta content="" name="author" />
+    <link href="/Content/congphuhuynh/assets/select2/css/select2.min.css" rel="stylesheet"/>
+<link href="/Content/mathMLL.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/animate.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/nav-menu.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/custom.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/css/custom-dev.css" rel="stylesheet"/>
+<link href="/Content/congphuhuynh/assets/toast-master/css/jquery.toast.css" rel="stylesheet"/>
+
+    <script src="/Content/congphuhuynh/js/jquery.min.js"></script>
+<script src="/Content/congphuhuynh/js/bootstrap.bundle.min.js"></script>
+<script src="/Content/congphuhuynh/assets/select2/js/select2.min.js"></script>
+<script src="/Content/congphuhuynh/assets/toast-master/js/jquery.toast.js"></script>
+<script src="/Content/congphuhuynh/js/nav-menu.js"></script>
+<script src="/Content/congphuhuynh/js/main.js"></script>
+
+    <link href="/Content/congphuhuynh/css/styleHelpButton.css" rel="stylesheet" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-180x180-precomposed.png">
+</head>
+
+<body>
+    
+        <script>
+
+                function logoff() {
+                  if (0 == 1) {
+                            loginSSO.signOut();
+                        }
+                        else {
+                            location.replace("/Account/LogOff");
+                        }
+                }
+
+            function onAdditionNienHocParentals() {
+                return {
+                    idPhuHuynh: 115444,
+                }
+            }
+        </script>
+        <style>
+            @media only screen and (max-width:700px) {
+                .input-selected {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding: .5rem;
+                    line-height: normal
+                }
+
+                    .input-selected > div {
+                        margin-bottom: 5px
+                    }
+
+                        .input-selected > div:nth-child(odd) {
+                            width: 70%
+                        }
+
+                        .input-selected > div:nth-child(even) {
+                            width: 28%
+                        }
+            }
+        </style>
+        <div class="header">
+            <div class="page-header-inner d-flex justify-content-between align-items-center flex-wrap">
+                <div class="page-logo">
+                    <a href="/PhuHuynh/TrangChuParentals" title="">
+                        <div class="logo-img">
+                            <img src="https://congphuhuynh.longan.edu.vn//Modules/LongAn/Logo.png" alt="logo">
+                        </div>
+                        <div class="logo-txt">
+                            <small>Sở giáo dục &amp; đào tạo</small>
+                            <strong>TỈNH LONG AN</strong>
+                        </div>
+                    </a>
+                </div>
+                <div class="float-lg-left name-sl mr-3">
+                    <div class="name" id="tenTruongParentals" data-idtruong="398">THPT L&#234; Qu&#253; Đ&#244;n</div>
+                </div>
+                <div class="input-selected flex-grow-1">
+                    <div class="d-inline-block">
+                        <select id="idHocSinhParentals" name="idHocSinhParentals">
+        <option value="58686" selected="selected">080308012830 - V&#245; Thị Yến Nhi</option>
+</select>
+
+                        
+                    </div>
+                    <div class="d-inline-block">
+                        
+<select id="idLopHocParentals" name="idLopHocParentals">
+        <option value="6630">6.1</option>
+        <option value="10571">7.1</option>
+        <option value="19948">8.1</option>
+        <option value="30502">9.1</option>
+        <option value="42618" selected="selected">10A9</option>
+</select>
+
+                    </div>
+                    <div class="d-inline-block">
+                        
+<select id="idNienHocParentals" name="idNienHocParentals">
+        <option value="35" selected="selected">2023-2024</option>
+        <option value="34">2022-2023</option>
+        <option value="33">2021-2022</option>
+        <option value="32">Ni&#234;n học 2020-2021</option>
+        <option value="31">Ni&#234;n học 2019-2020</option>
+</select>
+
+                    </div>
+                    <div class="d-inline-block">
+                        <select id="idHocKyParentals" name="idHocKyParentals">
+        <option value="1">Học kỳ 1</option>
+        <option value="2" selected="selected">Học kỳ 2</option>
+        <option value="3">Cả năm</option>
+</select>
+
+                    </div>
+                </div>
+                <div class="top-menu">
+                    <ul class="nav navbar-nav">
+                        
+                        <li class="dropdown dropdown-tasks">
+                            <a href="" class="item-dr" data-toggle="dropdown" onclick="ReadThongBaoMoi()">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span class="badge badge-default" id="tbmheader"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" id="tbchuadoc" style="width: 440px">
+                                <li class="external HeaderThongBao" id="thongBaoHearder">
+                                    <h3>
+                                        <span class="bold">Thông báo mới</span>
+                                    </h3>
+                                    <a href="/PhuHuynh/ThongBaoParentals" class="xemTatCaThongBao" target="_blank" rel="noopener noreferrer">Xem tất cả</a>
+                                </li>
+                                <ul class="dropdown-menu-list" id="bodyThongBao"></ul>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-notification">
+                            <a href="" class="item-dr" data-toggle="dropdown" onclick="GetTuongTac()">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                <span class="badge badge-default" id="ttheader"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" id="tuongtac" style="width: 440px">
+                                <li class="external HeaderThongBao" id="tuongTacHeader">
+                                    <h3>
+                                        <span class="bold">Bình luận và lượt thích</span>
+                                    </h3>
+                                    <a href="#" onclick="updateDemSoTuongTac(1)" class="xemTatCaThongBao">Xóa tất cả</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list" id="bodyTuongTac"></ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown dropdown-user">
+                            <a href="" class="item-dr" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="alphabet-avatar bg-yellow-crusta">
+                                    <img src="/Content/congphuhuynh/images/user.png" alt="">
+                                </span>
+                                <span class="username">V&#245; Thị Yến Nhi</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+
+
+                                <li>
+                                    <a href="/PhuHuynh/AccountParentals/EditThongTinHocSinh"><i class="fa fa-user" aria-hidden="true"></i> Đổi thông tin học sinh</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="logoff()"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="/Content/congphuhuynh/assets/js/congphuhuynh.js"></script>
+        <script>
+
+
+
+            $(document).ready(function () {
+
+
+
+               $('#idHocKyParentals').on('select2:select', function (e) {
+                    var data = e.params.data;
+                    $.ajax({
+                        type: "POST",
+                        url: '/PhuHuynh/CommonParentals/UpdateSelectHocKy',
+                        data: { idHocKy: data.id },
+                        success: function (dataResult) {
+                            location.reload();
+                        },
+                    });
+                });
+
+                $('#idNienHocParentals').on('select2:select', function (e) {
+                    var data = e.params.data;
+                    $.ajax({
+                        type: "POST",
+                        url: '/PhuHuynh/CommonParentals/UpdateSelectNienHoc',
+                        data: { idHocSinh: $('#idHocSinhParentals').val(),idNienHoc: data.id },
+                        success: function (dataResult) {
+                            location.reload();
+                        },
+                    });
+                });
+
+                $('#idLopHocParentals').on('select2:select', function (e) {
+                    debugger
+                    var data = e.params.data;
+                    $.ajax({
+                        type: "POST",
+                        url: '/PhuHuynh/CommonParentals/UpdateSelectLopHoc',
+                        data: { idHocSinh: $('#idHocSinhParentals').val(), idNienHoc: $('#idNienHocParentals').val(), idLopHoc: data.id },
+                        dataType: "JSON",
+                        success: function (dataResult) {
+                            location.reload();
+                        },
+                    });
+
+                });
+
+                $('#idHocSinhParentals').on('select2:select', function (e) {
+                    var data = e.params.data;
+                    $.ajax({
+                        type: "POST",
+                        url: '/PhuHuynh/CommonParentals/UpdateSelectHocSinh',
+                        data: { idHocSinh: data.id },
+                        success: function (dataResult) {
+                            location.reload();
+                        },
+                    });
+
+                });
+            });
+
+            // Thong Bao Moi
+            $(document).ready(function () {
+                SoThongBaoNewHeader();
+            });
+            function SoThongBaoNewHeader() {
+                $.ajax({
+                    url: "/PhuHuynh/ThongBaoParentals/DemSoThongBaoHeader",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.chuaDoc > 0) {
+                            $("#tbmheader").html(data.chuaDoc);
+                        }
+                        if (data.soTuongTac > 0) {
+                            $("#ttheader").html(data.soTuongTac);
+                        }
+                    }
+                });
+            }
+            function ReadThongBaoMoi() {
+                $.ajax({
+                    url: "/PhuHuynh/ThongBaoParentals/DemSoThongBaoNew",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        var model = data.chuaDocModels;
+                        var url = "";
+                        if (model.length > 0) {
+                            $('#bodyThongBao').empty();
+                            for (var i = 0; i < model.length; i++) {
+                                if (model[i].EnumLoaiDoiTuongGui == 10)
+                                {
+                                    url = "/Content/layoutmaster/images/Truong2.png";
+                                }
+                                else if (model[i].EnumLoaiDoiTuongGui == 20)
+                                {
+                                    url = "/Content/layoutmaster/images/gv.png";
+                                }
+                                else if (model[i].EnumLoaiDoiTuongGui == 210)
+                                {
+                                    url = "/Content/layoutmaster/images/default-avatar.png";
+                                }
+                                var li = document.createElement('li');
+                                li.innerHTML = `<a class="lineThongBao" href="#" onclick="updateDemSoTB(${model[i].ID})">
+                                                <span style="float:left;height: 100%;"><img style="width: 50px;margin-right: 15px;" src="${url}"></span>
+                                                <span class="details" style="display: block;overflow: hidden;max-height: 60px;"> ${model[i].TieuDe}</span>
+                                                <p style="color: #138ad4;"> ${model[i].TenLoaiDoiTuongGui}<span class="time"> ${model[i].NgayDangText}</span></p>
+                                                </a>`;
+
+                                document.getElementById('bodyThongBao').appendChild(li);
+                            }
+                        } else {
+                            $('#bodyThongBao').empty();
+                            var div = document.createElement('div');
+                            div.setAttribute('style', 'text-align:center;margin:10px;');
+                            div.innerHTML = `
+                                    <li>
+                                        <span style="padding-top:8px !important;color:#003f59;">Không có thông báo mới</span>
+                                    </li>
+                                `;
+                            document.getElementById('bodyThongBao').appendChild(div);
+                        }
+                    }
+                });
+            }
+            function updateDemSoTB(e) {
+                window.open('/PhuHuynh/ThongBaoParentals/DetailThongBao?id=' + e, '_blank');
+                ajaxUpdateDemSoTB();
+            };
+            function ajaxUpdateDemSoTB() {
+                $.ajax({
+                    url: "/PhuHuynh/ThongBaoParentals/DemSoThongBaoNew?demSo=1",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.chuaDoc > 0) {
+                            $('#bodyThongBao').empty();
+                            $("#tbmheader").html(data.chuaDoc);
+                        } else {
+                            $("#tbmheader").empty();
+                            $("#tbMoi").empty();
+                        }
+                    }
+                });
+            }
+
+
+            //Tuong Tac
+            
+            function GetTuongTac() {
+                $.ajax({
+                    url: "/PhuHuynh/ThongBaoParentals/DemSoTuongTac",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        var model = data.danhSachTB;
+                        if (model.length > 0) {
+                            $('#bodyTuongTac').empty();
+                            for (var i = 0; i < model.length; i++) {
+                                if (model[i].EnumLoaiDoiTuongGui == 10)
+                                {
+                                    url = "/Content/layoutmaster/images/Truong2.png";
+                                }
+                                else if (model[i].EnumLoaiDoiTuongGui == 20)
+                                {
+                                    url = "/Content/layoutmaster/images/gv.png";
+                                }
+                                else if (model[i].EnumLoaiDoiTuongGui == 210)
+                                {
+                                    url = "/Content/layoutmaster/images/default-avatar.png";
+                                }
+                                var contentTT = document.createElement('li');
+                                contentTT.innerHTML = `<a class="lineThongBao" href="#" onclick="updateDemSoTuongTac(${model[i].IdTB})">
+                                                        <span style="float:left;height: 100%;"><img style="width: 50px;margin-right: 15px;" src="${url}"></span>
+                                                        <span class="details" style="display: block;overflow: hidden;max-height: 60px;"> ${model[i].TieuDeText}</span>
+                                                        <p style="color: #138ad4;"> ${model[i].EnumLoaiDoiTuongGuiText}</p>
+                                                        </a>`;
+
+                                document.getElementById('bodyTuongTac').appendChild(contentTT);
+                            }
+                        } else {
+                            $('#bodyTuongTac').empty();
+                            var divEmpty = document.createElement('div');
+                            divEmpty.setAttribute('style', 'text-align:center;margin:10px;');
+                            divEmpty.innerHTML = `
+                                    <li>
+                                        <span style="padding-top:8px !important;color:#003f59;">Không có bình luận hoặc lượt thích mới</span>
+                                    </li>
+                                `;
+                            document.getElementById('bodyTuongTac').appendChild(divEmpty);
+                        }
+                    }
+                });
+            }
+            function updateDemSoTuongTac(e) {
+                if (e === 1) {
+                    ajaxUpdateDemSoTuongTac(1);
+                } else if (e === 0) {
+                    ajaxUpdateDemSoTuongTac(0);
+                } else {
+                    window.open('/PhuHuynh/ThongBaoParentals/DetailThongBao?id=' + e, '_blank');
+                    ajaxUpdateDemSoTuongTac();
+                }
+
+            };
+            function ajaxUpdateDemSoTuongTac(e) {
+                $.ajax({
+                    url: "/PhuHuynh/ThongBaoParentals/DemSoTuongTac" +"?isReadAll=" + e,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.soTB > 0) {
+                            $('#bodyTuongTac').empty();
+                            $("#ttheader").html(data.soTB);
+                        }else {
+                            $("#bodyTuongTac").empty();
+                            $("#ttheader").empty();
+                        }
+                    }
+                });
+            }
+
+        </script>
+
+    <div class="page-content">
+        
+<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+<script src="/Content/Popper/popper.min.js"></script>
+<link rel="stylesheet" href="/Content/Tippy/tippy.min.css">
+<link rel="stylesheet" href="/Content/Tippy/light.min.css">
+<link rel="stylesheet" href="/Content/Tippy/scale.css">
+<script src="/Content/Tippy/tippy.umd.min.js"></script>
+
+<script src="/Content/tailwind/tailwind.min.js"></script>
+<script>
+    tailwind.config = {
+        prefix: "tw-"
+    }
+</script>
+<style>
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #6d6d6d;
+    }
+</style>
+    <div class="tw-group/sb tw-sidebar tw-flex tw-flex-col tw-w-[78px] tw-min-w-[78px] tw-bg-slate-100 tw-p-[6px_14px] tw-transition-all tw-duration-[0.5s] [&.open]:tw-w-[270px] [&.open]:tw-min-w-[270px]">
+        <div class="tw-h-14 tw-relative tw-flex tw-w-full tw-rounded-xl  tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s]">
+            <div class="tw-uppercase tw-opacity-0 tw-text-[#138ad4] tw-text-xl tw-font-bold tw-whitespace-nowrap tw-transition-all tw-duration-[0.25s] group-[.open]/sb:tw-opacity-100 group-[.open]/sb:tw-duration-[1s]">Cổng học sinh</div>
+            <i class="bx bx-menu bx bx-menu tw-absolute tw-top-1/2 tw-right-0 tw--translate-y-1/2 tw-text-[23px] tw-text-center tw-cursor-pointer tw-transition-all tw-duration-[0.5s] tw-text-[#138ad4] tw-h-14 tw-min-w-12  tw-text-2xl !tw-leading-[60px]" id="btn"></i>
+        </div>
+        <div class="tw-grow tw-h-0">
+            <ul class="tw-overflow-y-hidden hover:tw-overflow-y-auto tw-overflow-x-hidden tw-h-full">
+                    <li class="tw-relative tw-my-2" data-tippy-content="Trang chủ">
+                        <a href="/PhuHuynh/TrangChuParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-home tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Th&#244;ng b&#225;o">
+                        <a href="/PhuHuynh/ThongBaoParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-bell tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Th&#244;ng b&#225;o</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="B&#224;i tập về nh&#224;">
+                        <a href="/PhuHuynh/BaiTapVeNhaParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-book tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">B&#224;i tập về nh&#224;</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Học liệu điện tử">
+                        <a href="/PhuHuynh/HocLieuDienTuParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-folder-open tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Học liệu điện tử</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Kiểm tra trực tuyến">
+                        <a href="/PhuHuynh/ThiTrucTuyenParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-pencil tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Kiểm tra trực tuyến</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Lịch học">
+                        <a href="/PhuHuynh/LichHocParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-calendar tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Lịch học</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Học trực tuyến">
+                        <a href="/PhuHuynh/HocTrucTuyenParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-video-camera tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Học trực tuyến</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Điểm số">
+                        <a href="/PhuHuynh/DiemSoParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-calculator tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Điểm số</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Học bạ">
+                        <a href="/PhuHuynh/HocBaParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-history tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Học bạ</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Thanh To&#225;n Online">
+                        <a href="/PhuHuynh/ThanhToanOnlineParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="fa fa-credit-card-alt tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Thanh To&#225;n Online</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Theo d&#245;i thanh to&#225;n">
+                        <a href="/PhuHuynh/TheoDoiThanhToanParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="fa fa-bar-chart tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Theo d&#245;i thanh to&#225;n</span>
+                        </a>
+                    </li>
+                    <li class="tw-relative tw-my-2" data-tippy-content="Mở kh&#243;a thanh to&#225;n">
+                        <a href="/PhuHuynh/MoKhoaThanhToanParentals" class="tw-group/item _group-[&:not(.open)]/sb:hover:tw-bg-slate-500 group-[&:not(.open)]/sb:tw-bg-slate-100 hover:tw-bg-[#138ad4] tw-flex tw-size-full tw-rounded-lg tw-items-center tw-no-underline tw-transition-all tw-duration-[0.4s] tw-bg-white">
+                            <div style="padding: 5px">
+                                <i class="icon fa fa-key tw-text-[#138ad4] tw-h-10 tw-min-w-10  tw-text-xl !tw-leading-[40px] tw-rounded-lg tw-text-center tw-transition-all tw-duration-[0.5s] tw-text-white tw-bg-[#138ad4]" aria-hidden="true"></i>
+                            </div>
+                            
+                            <span class="tw-text-[#138ad4] tw-text-lg tw-font-semibold tw-whitespace-nowrap tw-opacity-0 tw-pointer-events-none tw-transition tw-duration-[0.4s] group-hover/item:tw-text-white tw-transition-all tw-duration-[0.5s] group-[.open]/sb:tw-opacity-100">Mở kh&#243;a thanh to&#225;n</span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        tippy('[data-tippy-content]', {
+            theme: 'light',
+            placement: 'right',
+            animation: 'scale',
+            onShow(instance) {
+                if ($('.tw-sidebar').hasClass('open')) {
+                    return false;
+                }
+            },
+        });
+        $(document).ready(function () {
+            if ($(window).width() > 1200) {
+                $('.tw-sidebar').addClass('open');
+                $('#btn').toggleClass('bx-menu-alt-right bx-menu')
+            }
+        });
+        $(document).on('click', '#btn', e => {
+            $(e.currentTarget).toggleClass('bx-menu-alt-right bx-menu')
+            $('.tw-sidebar').toggleClass('open')
+
+        })
+    </script>
+
+        
+        <div class="page-content">
+            <div class="content-wrapper">
+                
+
+
+
+<style>
+    .nav-tabs h5 {
+        cursor: pointer;
+    }
+</style>
+<link href="/Content/layoutmaster/css/spinner.css" rel="stylesheet" />
+<span id="mainSpinner"></span>
+<div class="content">
+    <div class="card-body">
+            <div class="phonebook">
+                <h5 class="card-title comment-detail-title text-uppercase">Bảng điểm</h5>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-GV" role="tabpanel">
+                    
+
+<style>
+    .page-title h2 {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 1.25rem;
+        color: #1d5374;
+        margin-top: 15px;
+    }
+
+    span.text-bg {
+        text-align: center;
+    }
+</style>
+
+        <div class="page-title">
+            <div class="title_left">
+                <h2>Kết quả học kỳ 1</h2>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="nav-GV" role="tabpanel">
+            <table class="table table-df m-0"  aria-describedby="mydesc">
+                <thead class="thead-dark-df">
+                    <tr>
+                        <th scope="col">Môn</th>
+                            <th scope="col" class="text-center">Kiểm tra thường xuyên (hệ số 1)</th>
+                            <th scope="col" class="text-center">Kiểm tra giữa kỳ (hệ số 2)</th>
+                        <th scope="col">Kiểm tra học kỳ (hệ số 3)</th>
+                    </tr>
+                </thead>
+                <tbody class="scrollbar">
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#c0504d">T</span>
+                                    To&#225;n
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    9.0 7.0 7.5 4.5
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        6.3
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    6.4
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">V</span>
+                                    Vật l&#253;
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 9.5 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        7.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    7.3
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">S</span>
+                                    Sinh học
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    10.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">N</span>
+                                    Ngữ văn
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 7.0 7.0 9.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        6.8
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    5.8
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">L</span>
+                                    Lịch sử
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    9.5 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        9.3
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    9.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">Đ</span>
+                                    Địa L&#253;
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 6.5 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        9.3
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    9.8
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">N</span>
+                                    Ngoại ngữ 1
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 7.8 8.5
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        8.8
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    8.3
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#548dd4">C</span>
+                                    C&#244;ng nghệ
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    9.8
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">G</span>
+                                    Gi&#225;o Dục Quốc Ph&#242;ng
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    10.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#a5a5a5">G</span>
+                                    Gi&#225;o dục thể chất
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">G</span>
+                                    Gi&#225;o dục địa phương
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#ffffff">H</span>
+                                    Hoạt động trải nghiệm, hướng nghiệp
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                                            <tr class="border">
+                                <td>
+                                </td>
+
+                            <td>
+                                <div class="font-weight-bold float-left">
+                                    Kết quả học tập:
+                                    <div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-weight-bold float-left">
+
+                                    Kết quả rèn luyện:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-weight-bold float-left">
+                                    Đạt danh hiệu:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+                </div>
+                <div class="tab-pane fade show active" id="nav-PH" role="tabpanel">
+                    
+
+<style>
+    .page-title h2 {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 1.25rem;
+        color: #1d5374;
+        margin-top: 15px;
+    }
+
+    span.text-bg {
+        text-align: center;
+    }
+</style>
+
+        <div class="page-title">
+            <div class="title_left">
+                <h2>Kết quả học kỳ 2</h2>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="nav-GV" role="tabpanel">
+            <table class="table table-df m-0"  aria-describedby="mydesc">
+                <thead class="thead-dark-df">
+                    <tr>
+                        <th scope="col">Môn</th>
+                            <th scope="col" class="text-center">Kiểm tra thường xuyên (hệ số 1)</th>
+                            <th scope="col" class="text-center">Kiểm tra giữa kỳ (hệ số 2)</th>
+                        <th scope="col">Kiểm tra học kỳ (hệ số 3)</th>
+                    </tr>
+                </thead>
+                <tbody class="scrollbar">
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#c0504d">T</span>
+                                    To&#225;n
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    8.0 6.0 7.0 7.0 7.5
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        7.2
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    8.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">V</span>
+                                    Vật l&#253;
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        9.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    8.5
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">S</span>
+                                    Sinh học
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 9.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    10.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">N</span>
+                                    Ngữ văn
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 8.0 7.5 6.5
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        7.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    7.5
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">L</span>
+                                    Lịch sử
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 9.5
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    9.5
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">Đ</span>
+                                    Địa L&#253;
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        9.8
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    9.8
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">N</span>
+                                    Ngoại ngữ 1
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    9.0 8.0 8.5 9.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        8.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    8.7
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#548dd4">C</span>
+                                    C&#244;ng nghệ
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    10.0 10.0 10.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        10.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    10.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:none">G</span>
+                                    Gi&#225;o Dục Quốc Ph&#242;ng
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    9.0 8.0
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        9.0
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    10.0
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#a5a5a5">G</span>
+                                    Gi&#225;o dục thể chất
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">G</span>
+                                    Gi&#225;o dục địa phương
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#ffffff">H</span>
+                                    Hoạt động trải nghiệm, hướng nghiệp
+                                </div>
+                            </td>
+                            <td class="border">
+                                <div class="item-df font-weight-bold-rollback text-left">
+
+                                    Đạt Đạt
+                                </div>
+                            </td>
+                                <td class="border text-center">
+                                    <div class="item-df color-red font-weight-bold text-right">
+
+                                        Đạt
+                                    </div>
+                                </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+
+                                    Đạt
+                                </div>
+                            </td>
+
+                        </tr>
+                                            <tr class="border">
+                                <td>
+                                </td>
+
+                            <td>
+                                <div class="font-weight-bold float-left">
+                                    Kết quả học tập:
+                                    <div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-weight-bold float-left">
+
+                                    Kết quả rèn luyện:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-weight-bold float-left">
+                                    Đạt danh hiệu:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+                </div>
+                <div class="tab-pane fade show active" id="nav-HS" role="tabpanel">
+                    
+
+<style>
+    .page-title h2 {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 1.25rem;
+        color: #1d5374;
+        margin-top: 15px;
+    }
+
+    span.text-bg {
+        text-align: center;
+    }
+</style>
+
+        <div class="page-title">
+            <div class="title_left">
+                <h2>Kết quả cả năm</h2>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="nav-HS" role="tabpanel">
+            <table class="table table-df m-0"  aria-describedby="mydesc">
+                <thead class="thead-dark-df">
+                    <tr>
+                        <th scope="col" class="border">Môn</th>
+                        <th scope="col" class="text-center border">Học kỳ 1</th>
+                        <th scope="col" class="text-center border">Học kỳ 2</th>
+                        <th scope="col" class="text-center border">Cả năm</th>
+                    </tr>
+                </thead>
+                <tbody class="scrollbar">
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#c0504d">T</span>
+                                    To&#225;n
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+6.6                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+7.4                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    7.1
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:">V</span>
+                                    Vật l&#253;
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+8.2                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.3                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    8.9
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:">S</span>
+                                    Sinh học
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+10.0                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.9                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    9.9
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:">N</span>
+                                    Ngữ văn
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+7.1                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+7.6                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    7.4
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:">L</span>
+                                    Lịch sử
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.4                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.8                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    9.7
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">Đ</span>
+                                    Địa L&#253;
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.3                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.9                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    9.7
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">N</span>
+                                    Ngoại ngữ 1
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+8.8                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+8.5                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    8.6
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#548dd4">C</span>
+                                    C&#244;ng nghệ
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.9                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+10.0                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    10.0
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:">G</span>
+                                    Gi&#225;o Dục Quốc Ph&#242;ng
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+10.0                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+9.3                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    9.5
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#a5a5a5">G</span>
+                                    Gi&#225;o dục thể chất
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    Đạt
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#98d6e2">G</span>
+                                    Gi&#225;o dục địa phương
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    Đạt
+
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border" style="text-align:left">
+                                <div class="item-df font-weight-bold-rollback text-uppercase">
+                                    <span class="text-bg" style="background:#ffffff">H</span>
+                                    Hoạt động trải nghiệm, hướng nghiệp
+                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df font-weight-bold-rollback text-right">
+Đạt                                </div>
+                            </td>
+                            <td class="border text-center">
+                                <div class="item-df color-red font-weight-bold text-right">
+                                    
+                                    Đạt
+
+
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr class="border">
+                            <td colspan="1">
+                                <div class="font-weight-bold float-left">
+                                </div>
+                            </td>
+                            <td colspan="1">
+                                <div class="font-weight-bold float-left">
+                                    Kết quả học tập:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="1">
+                                <div class="font-weight-bold float-left">
+                                    Kết quả rèn luyện:<div class="item-df color-red font-weight-bold float-right ml-2">
+                                        Tốt
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="1">
+                                <div class="font-weight-bold float-left">
+                                    Đạt danh hiệu:<div class="item-df color-red font-weight-bold float-right ml-2">
+Học sinh Giỏi                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright pt-2 pb-2 text-center">Bản quyền thuộc về ASCVN</div>
+    
+    <script>
+        function goToHelpPage() {
+            window.open('');
+        }
+    </script>
+    
+</body>
+</html>
